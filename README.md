@@ -104,12 +104,7 @@ export LD_LIBRARY_PATH="./build/lib:$LD_LIBRARY_PATH"
 ## 自定义扩展
 
 要自定义短语替换：
-- 在 `data/hr-files/lexicon.txt` 中加入目标短语与拼音（多字词建议补充）
-- 使用官方 Colab 脚本生成新的 `replace.fst`（参考 `cxx-api-examples/sense-voice-with-hr-cxx-api.cc` 注释中的链接）
+- 使用官方 Colab 脚本生成新的 `replace.fst`。[👉 点击运行](https://colab.research.google.com/drive/1jEaS3s8FbRJIcVQJv2EQx19EM_mnuARi?usp=sharing)
 - 将生成的 `replace.fst` 覆盖到 `data/hr-files/replace.fst`
 
-注意：当前仅支持单个 `replace.fst` 文件（与主库保持一致）
-
-## 许可证
-
-Copyright (c) 2025 Xiaomi Corporation
+注意：当前仅支持单个 `replace.fst` 文件
