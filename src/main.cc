@@ -12,6 +12,7 @@
 #include <iomanip>
 #include <locale.h>
 #include <cstdlib>
+#include <fstream> 
 
 #ifdef _WIN32
 #include <windows.h>
