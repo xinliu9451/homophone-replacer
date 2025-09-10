@@ -13,7 +13,10 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+<<<<<<< HEAD
 #include <set>
+=======
+>>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
 
 // 引入 FST 文本归一化器
 #include "kaldifst/csrc/text-normalizer.h"
@@ -92,9 +95,12 @@ class HomophoneReplacer::Impl {
         replacer_list_.push_back(std::make_unique<kaldifst::TextNormalizer>(f));
       }
     }
+<<<<<<< HEAD
 
     // 应用运行时增删规则（在已有 FST 基础上额外覆盖/屏蔽）
     BuildRuntimeRuleMap();
+=======
+>>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
   }
 
   std::string Apply(const std::string &text) const {
@@ -157,11 +163,14 @@ class HomophoneReplacer::Impl {
 
     flush_segment(result);
 
+<<<<<<< HEAD
     // 在整句级别应用运行时词典覆盖（最后一步，优先级最高）
     if (!runtime_rule_map_.empty()) {
       result = ApplyRuntimeOverrides(result);
     }
 
+=======
+>>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
     auto t4 = now();
 
     if (config_.debug) {
@@ -261,6 +270,7 @@ class HomophoneReplacer::Impl {
     }
   }
 
+<<<<<<< HEAD
   // 解析 config_ 中的 add_rules/del_rules/rules_file，构建运行时覆盖词典
   void BuildRuntimeRuleMap() {
     // del set
@@ -367,12 +377,17 @@ class HomophoneReplacer::Impl {
     return out;
   }
 
+=======
+>>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
  private:
   HomophoneReplacerConfig config_;
   std::unique_ptr<JiebaWrapper> jieba_;
   std::vector<std::unique_ptr<kaldifst::TextNormalizer>> replacer_list_;
   std::unordered_map<std::string, std::string> word2pron_;
+<<<<<<< HEAD
   std::unordered_map<std::string, std::string> runtime_rule_map_;
+=======
+>>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
 };
 
 HomophoneReplacer::HomophoneReplacer(const HomophoneReplacerConfig &config)
