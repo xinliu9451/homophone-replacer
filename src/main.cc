@@ -27,13 +27,10 @@ void PrintUsage() {
   std::cout << "Usage: homophone-replacer-standalone [options]\n\n";
   std::cout << "Options:\n";
   std::cout << "  --text TEXT           Input text for homophone replacement\n";
-<<<<<<< HEAD
   std::cout << "  --add-rule K=V       Add runtime rule: pinyin=word (repeatable)\n";
   std::cout << "  --del-rule K         Delete runtime rule by pinyin key (repeatable)\n";
   std::cout << "  --rules-file FILE    Load rules from file, each line K=V\n";
   std::cout << "  --save-rules FILE    Save added rules (K=V) to file\n";
-=======
->>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
   std::cout << "  --debug               Show debug information\n";
   std::cout << "  --help, -h            Show this help message\n\n";
   std::cout << "Examples:\n";
@@ -58,7 +55,6 @@ public:
         show_help = true;
       } else if (arg == "--debug") {
         debug = true;
-<<<<<<< HEAD
       } else if (arg == "--add-rule" && i + 1 < argc) {
         add_rules.push_back(argv[++i]);
       } else if (arg == "--del-rule" && i + 1 < argc) {
@@ -69,10 +65,8 @@ public:
         text = argv[++i];
       } else if (arg == "--save-rules" && i + 1 < argc) {
         save_rules = argv[++i];
-=======
       } else if (arg == "--text" && i + 1 < argc) {
         text = argv[++i];
->>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
       } else {
         std::cerr << "Unknown argument: " << arg << std::endl;
         exit(1);
@@ -93,7 +87,6 @@ public:
         show_help = true;
       } else if (arg == "--debug") {
         debug = true;
-<<<<<<< HEAD
       } else if (arg == "--add-rule" && i + 1 < args.size()) {
         add_rules.push_back(args[++i]);
       } else if (arg == "--del-rule" && i + 1 < args.size()) {
@@ -104,10 +97,8 @@ public:
         text = args[++i];
       } else if (arg == "--save-rules" && i + 1 < args.size()) {
         save_rules = args[++i];
-=======
       } else if (arg == "--text" && i + 1 < args.size()) {
         text = args[++i];
->>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
       } else {
         std::cerr << "Unknown argument: " << arg << std::endl;
         exit(1);
@@ -131,13 +122,10 @@ public:
   std::string dict_dir;
   std::string lexicon;
   std::string rule_fsts;
-<<<<<<< HEAD
   std::vector<std::string> add_rules;
   std::vector<std::string> del_rules;
   std::string rules_file;
   std::string save_rules;
-=======
->>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
   bool debug = false;
   bool show_help = false;
 };
@@ -227,12 +215,9 @@ int main(int argc, char* argv[]) {
     args.rule_fsts,
     args.debug
   );
-<<<<<<< HEAD
   hr_config.add_rules = std::move(args.add_rules);
   hr_config.del_rules = std::move(args.del_rules);
   hr_config.rules_file = std::move(args.rules_file);
-=======
->>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
   
   if (args.debug) {
     std::cout << "Configuration:\n";
@@ -273,7 +258,6 @@ int main(int argc, char* argv[]) {
         std::chrono::duration<double>(total_end - begin).count();
             
     std::cout << "Total time: " << total_seconds << "s\n";
-<<<<<<< HEAD
     // 可选：保存新增规则到文件（格式 K=V）
     if (!args.save_rules.empty() && !hr_config.add_rules.empty()) {
       std::ofstream ofs(args.save_rules, std::ios::out | std::ios::trunc);
@@ -284,8 +268,6 @@ int main(int argc, char* argv[]) {
         std::cerr << "Failed to write rules file: " << args.save_rules << "\n";
       }
     }
-=======
->>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
     
   } catch (const std::exception& e) {
     std::cerr << "Error: " << e.what() << "\n";

@@ -7,10 +7,7 @@
 
 #include <memory>
 #include <string>
-<<<<<<< HEAD
 #include <vector>
-=======
->>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
 
 namespace hr_standalone {
 
@@ -20,7 +17,6 @@ struct HomophoneReplacerConfig {
   std::string rule_fsts;
   bool debug;
 
-<<<<<<< HEAD
   // 运行时拼音规则：格式 "pinyin=汉字"，如 "pai2zhang3=排长"
   std::vector<std::string> add_rules;
   // 删除规则：仅拼音键，如 "pai2zhang3"
@@ -28,8 +24,6 @@ struct HomophoneReplacerConfig {
   // 从文件批量加载规则（每行同 add_rules 的格式）
   std::string rules_file;
 
-=======
->>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
   HomophoneReplacerConfig() = default;
 
   HomophoneReplacerConfig(const std::string &dict_dir,

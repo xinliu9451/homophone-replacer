@@ -52,12 +52,9 @@ cppjieba已经自动下载到`third_party/cppjieba/`目录。
 ```cmd
 # 在VS开发者命令提示符中
 build.bat
-<<<<<<< HEAD
 
 # 准备词库文件
 将data复制到生成的可执行文件homophone-replacer-standalone.exe目录下
-=======
->>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
 ```
 
 **Linux:**
@@ -66,7 +63,6 @@ chmod +x build.sh
 # 默认 Release
 ./build.sh
 
-<<<<<<< HEAD
 # # Debug
 # CONFIG=Debug ./build.sh
 
@@ -78,7 +74,7 @@ chmod +x build.sh
 
 # 准备词库文件
 将data复制到生成的可执行文件homophone-replacer-standalone目录下
-=======
+
 # Debug
 CONFIG=Debug ./build.sh
 
@@ -87,7 +83,6 @@ GENERATOR="Ninja" ./build.sh
 
 # 指定构建目录
 BUILD_DIR=out ./build.sh
->>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
 
 # 运行（如遇共享库找不到，先设置环境变量）
 export LD_LIBRARY_PATH="./build/lib:$LD_LIBRARY_PATH"
@@ -105,7 +100,6 @@ export LD_LIBRARY_PATH="./build/lib:$LD_LIBRARY_PATH"
 
 # 查看帮助
 ./homophone-replacer-standalone --help
-<<<<<<< HEAD
 
 # 运行时增删关键词（不会修改 replace.fst，只在本次进程内生效）
 # 添加（可重复多次）： --add-rule 拼音=汉字
@@ -119,8 +113,6 @@ export LD_LIBRARY_PATH="./build/lib:$LD_LIBRARY_PATH"
 # 批量： --rules-file 文件（每行：拼音=汉字）
 ./homophone-replacer-standalone --text "器具损坏影响排长" \
   --rules-file ./data/hr-files/mapping.txt --debug
-=======
->>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
 ```
 
 ## 输入输出示例
@@ -143,7 +135,6 @@ export LD_LIBRARY_PATH="./build/lib:$LD_LIBRARY_PATH"
 - 使用官方 Colab 脚本生成新的 `replace.fst`。[👉 点击运行](https://colab.research.google.com/drive/1jEaS3s8FbRJIcVQJv2EQx19EM_mnuARi?usp=sharing)
 - 将生成的 `replace.fst` 覆盖到 `data/hr-files/replace.fst`
 
-<<<<<<< HEAD
 ### 运行时增删关键词（拼音→汉字）
 
 - `--add-rule K=V`：添加规则，示例 `pai2zhang3=排长`。
@@ -155,6 +146,4 @@ export LD_LIBRARY_PATH="./build/lib:$LD_LIBRARY_PATH"
 - 运行时规则优先级高于 `replace.fst`，可用于热修或兜底；长期规则建议编入新的 `replace.fst` 以获得更好性能与一致性。
 - 在生成replace.fst时会非常的慢，如果你很介意这一点，建议直接去掉replace.fst，直接通过每次识别的时候加载已准备好的关键词表 mapping.txt
 
-=======
->>>>>>> ac85ce3960f2c6e6d6fd709f483c882ac7f153e7
 注意：当前仅支持单个 `replace.fst` 文件
