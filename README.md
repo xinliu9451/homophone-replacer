@@ -44,7 +44,7 @@ homophone-replacer-standalone/
 
 ### 2. 检查依赖
 
-cppjieba(https://github.com/yanyiwu/cppjieba)需要下载到`third_party/cppjieba/`目录。
+cppjieba需要下载到`third_party/cppjieba/`目录。[👉 点击下载](https://github.com/yanyiwu/cppjieba)
 
 ### 3. 编译
 
